@@ -16,6 +16,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import MenuIcon from '@material-ui/icons/Menu'
 import MailIcon from '@material-ui/icons/Mail';
+import People from '@material-ui/icons/People'
 
 import Home from '../../views/Home/Home'
 
@@ -84,7 +85,7 @@ const ResponsiveDrawer = (props) => {
       <List>
         {routes.map((route, index) => (
           <ListItem button onClick={() => history.push(route.path)}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon>{route.icon}</ListItemIcon>
             <ListItemText primary={route.name} />
           </ListItem>
         ))}

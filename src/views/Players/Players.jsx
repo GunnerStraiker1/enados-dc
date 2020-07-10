@@ -18,13 +18,25 @@ const useStyles = makeStyles((theme) => ({
         // position: "fixed",
         // height: "100%"
     },
+    subtitleContainer:{
+        backgroundColor: "#7f7f7f"
+    },
+    textSubtitle:{
+        [theme.breakpoints.down('sm')]:{
+            fontSize: "1.5em",
+        },
+        color: "white",
+        fontSize: "2.5em",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
     playerContainer:{
         marginTop: "2rem",
         marginBottom: "2rem"
     },
     textPlayer:{
         [theme.breakpoints.down('sm')]:{
-            fontSize:"1.1em",
+            fontSize:"1em",
             fontWeight: "bolder"
         },
         fontSize:"2em",
@@ -109,7 +121,7 @@ const Players = () => {
 
     return (
         <div className={styles.margins}>
-                <Paper><Typography>DELANTEROS</Typography></Paper>
+                <Paper className={styles.subtitleContainer}><Typography className={styles.textSubtitle}>DELANTEROS</Typography></Paper>
                 <Grid container className={styles.backgroundContainer}>
                 {
                     dataForwards.map((player, idx) =>{
@@ -127,7 +139,7 @@ const Players = () => {
                     })
                 }
                 </Grid>
-                <Paper><Typography>MEDIOCAMPISTAS</Typography></Paper>
+                <Paper className={styles.subtitleContainer}><Typography className={styles.textSubtitle}>MEDIOCAMPISTAS</Typography></Paper>
                 <Grid container className={styles.backgroundContainer}>
                 {
                     dataCenters.map((player, idx) =>{
@@ -144,7 +156,7 @@ const Players = () => {
                     })
                 }
                 </Grid>
-                <Paper><Typography>DEFENSAS</Typography></Paper>
+                <Paper className={styles.subtitleContainer}><Typography className={styles.textSubtitle}>DEFENSAS</Typography></Paper>
                 <Grid container className={styles.backgroundContainer}>
                 {
                     dataDefenses.map((player, idx) =>{
@@ -161,7 +173,7 @@ const Players = () => {
                     })
                 }
                 </Grid>
-                <Paper><Typography>PORTEROS</Typography></Paper>
+                <Paper className={styles.subtitleContainer}><Typography className={styles.textSubtitle}>PORTEROS</Typography></Paper>
                 <Grid container className={styles.backgroundContainer}>
                 {
                     dataGoal.map((player, idx) =>{
@@ -178,7 +190,7 @@ const Players = () => {
                     })
                 }
                 </Grid>
-                <Paper><Typography>ENTRENADORES</Typography></Paper>
+                <Paper className={styles.subtitleContainer}><Typography className={styles.textSubtitle}>ENTRENADORES</Typography></Paper>
                 <Grid container className={styles.backgroundContainer}>
                 {
                     dataCoaches.map((player, idx) =>{

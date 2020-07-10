@@ -19,7 +19,7 @@ const useStyle = makeStyles((theme) => ({
         backgroundSize: "cover",
         color: "white",
         fontWeight: "bolder",
-        marginBottom: "1em",
+        // marginBottom: "1em",
         textAlign: "center"
     },
 
@@ -31,7 +31,7 @@ const useStyle = makeStyles((theme) => ({
     },
     textScore: {
         [theme.breakpoints.down('sm')]: {
-            fontSize: "2.2em"
+            fontSize: "2em"
         },
         fontSize: "6em"
     },
@@ -71,7 +71,7 @@ function GameTab(props) {
         <AccordionDetails className={styles.accordionDetails}>
             {gameData.data != undefined ?
                 <Grid container>
-                    <Grid item xs={3}>
+                    <Grid item xs={3} md={2}>
                         <Grid container>
                             <Grid item xs={12}><Icon className={`fa fa-calendar ${styles.iconCalendar}`}/></Grid>
                             <Grid item xs={12}>
@@ -81,7 +81,7 @@ function GameTab(props) {
                             
                         </Grid>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={3} md={3}>
                         {
                             gameData.data.local ?
                                 <Grid container >
@@ -96,10 +96,10 @@ function GameTab(props) {
                         }
 
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={3} md={4}>
                         <Typography className={styles.textScore}>{gameData.data.home_score + " - " + gameData.data.away_score}</Typography>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={3} md={3}>
                         {
                             gameData.data.local ?
                                 // <Grid container >

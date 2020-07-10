@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     },
     textTeam: {
         [theme.breakpoints.down('sm')]: {
-            fontSize: "1.1em",
+            fontSize: "1em",
             textAlign: "left",
             margin: "1em 0em 1em"
         },
