@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 import logo from '../../assets/imgs/logo.png'
 
-import { Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { routes } from '../../routes'
 
@@ -20,7 +20,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import Home from '../../views/Home/Home'
 
 const drawerWidth = 240
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,13 +57,13 @@ const useStyles = makeStyles((theme) => ({
     // padding: theme.spacing(3),
   },
 
-  logo:{
+  logo: {
     width: "100%"
   }
 }));
 
-function ResponsiveDrawer(props) {
-  const { window } = props;
+const ResponsiveDrawer = (props) => {
+  const { window, history } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -83,7 +83,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {routes.map((route, index) => (
-          <ListItem button key={index} component={Link} to={route.path}>
+          <ListItem button onClick={() => history.push(route.path)}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={route.name} />
           </ListItem>
@@ -97,65 +97,56 @@ function ResponsiveDrawer(props) {
 
   return (
     <div className={classes.root}>
-      <Router history={history}>
-        <AppBar position="fixed" className={classes.appBar}>
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              className={classes.menuButton}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <nav className={classes.drawer} aria-label="mailbox folders">
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Hidden smUp implementation="css">
-            <Drawer
-              container={container}
-              variant="temporary"
-              anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
-            >
-              {drawer}
-            </Drawer>
-          </Hidden>
-          <Hidden xsDown implementation="css">
-            <Drawer
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              variant="permanent"
-              open
-            >
-              {drawer}
-            </Drawer>
-          </Hidden>
-        </nav>
-
-        {/* Routes */}
-        <main className={classes.content}>
-          {
-            routes.map(rt => {
-              return <Route exact path={rt.path} component={rt.component} />
-            })
-          }
-          {/* <Route exact path="/" component={Home} /> */}
-          {/* <Route path="/grid" component={Grid} /> */}
-        </main>
-      </Router>
+      <AppBar position="fixed" className={classes.appBar}>
+      
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            className={classes.menuButton}
+          >
+            
+            <MenuIcon />
+            
+          </IconButton>
+          <Typography>Hola</Typography>
+        </Toolbar>
+      </AppBar>
+      <nav className={classes.drawer} aria-label="mailbox folders">
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Hidden smUp implementation="css">
+          <Drawer
+            container={container}
+            variant="temporary"
+            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Hidden>
+        <Hidden xsDown implementation="css">
+          <Drawer
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            variant="permanent"
+            open
+          >
+            {drawer}
+          </Drawer>
+        </Hidden>
+      </nav>
     </div>
   );
 }
 
-export default (ResponsiveDrawer);
+export default withRouter(ResponsiveDrawer)

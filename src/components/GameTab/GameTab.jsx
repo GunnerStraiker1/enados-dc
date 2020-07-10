@@ -69,8 +69,6 @@ function GameTab(props) {
 
     return (
         <AccordionDetails className={styles.accordionDetails}>
-            {console.log(gameData)}
-            {/* <Typography variant={"h4"}>{gameData.data !== undefined ? gameData.data.opponent : ""}</Typography> */}
             {gameData.data != undefined ?
                 <Grid container>
                     <Grid item xs={3}>
@@ -104,19 +102,22 @@ function GameTab(props) {
                     <Grid item xs={3}>
                         {
                             gameData.data.local ?
-                                <Grid container >
+                                // <Grid container >
+                                <div>
                                     <Grid item xs={12}><img src={gameData.data.opponent_image} className={styles.logoTeam}/></Grid>
                                     <Grid item xs={12}><Typography className={styles.textTeam}>{gameData.data.opponent}</Typography></Grid>
-                                </Grid>
+                                </div>
+                                // </Grid> 
                                 :
-                                <Grid container >
+                                // <Grid container >
+                                <div>
                                     <Grid item xs={12}><img src={logo} className={styles.logoTeam}/></Grid>
                                     <Grid item xs={12}><Typography className={styles.textTeam}>Venados F.C.</Typography></Grid>
-                                </Grid>
+                                    </div> // // </Grid> 
                         }
                     </Grid>
                 </Grid>
-                : <div />
+                : <div></div>
 
             }
 

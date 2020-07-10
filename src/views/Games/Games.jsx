@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) =>({
         color: "white"
     },
     monthTitle:{
+        [theme.breakpoints.down('sm')]:{
+            fontSize: "1em"
+        },
         fontWeight: "bolder"
     }
 }))

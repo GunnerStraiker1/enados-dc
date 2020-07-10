@@ -1,20 +1,18 @@
 import Home from './views/Home/Home'
+import Estadisticas from './views/Estadisticas/Estadisticas'
 
 export const routes = [
     {
         name: "Home",
-        path: "/",
-        component: Home
+        path: "/"
     },
     {
         name: "Estadisticas",
         path: '/stadistics',
-        component: Home
     },
     {
         name: "Jugadores",
-        path: '/players',
-        component: Home
+        path: '/players'
     },
 ]
 
