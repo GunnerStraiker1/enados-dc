@@ -71,7 +71,7 @@ const Home = props => {
       })
       .then((result) => {
         result.data.data.games.map((game) => {
-          game.league == "Copa MX" ? dataCopMx.push(game) : dataAscMx.push(game)
+          game.league === "Copa MX" ? dataCopMx.push(game) : dataAscMx.push(game)
           return true
         })
 
@@ -108,7 +108,7 @@ const Home = props => {
     <div className={classes.margins}>
       <Grid container >
         <Grid item xs={12} className={classes.logoContainer}>
-          <img src={logo} className={classes.logo} />
+          <img src={logo} className={classes.logo} alt=""/>
         </Grid>
         <Grid item xs={12}>
           <Paper>

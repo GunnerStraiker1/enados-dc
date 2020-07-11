@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, Paper, Container, Grid, AccordionDetails, withStyles, makeStyles, Typography, Icon } from '@material-ui/core'
+import { Grid, AccordionDetails, withStyles, makeStyles, Typography, Icon } from '@material-ui/core'
 import logo from '../../assets/imgs/logo.png'
 import soccer from '../../assets/imgs/grass2.jpg'
 
@@ -69,7 +69,7 @@ function GameTab(props) {
 
     return (
         <AccordionDetails className={styles.accordionDetails}>
-            {gameData.data != undefined ?
+            {gameData.data !== undefined ?
                 <Grid container>
                     <Grid item xs={3} md={2}>
                         <Grid container>
@@ -85,12 +85,12 @@ function GameTab(props) {
                         {
                             gameData.data.local ?
                                 <Grid container >
-                                    <Grid item xs={12}><img src={logo} className={styles.logoTeam}/></Grid>
+                                    <Grid item xs={12}><img src={logo} className={styles.logoTeam} alt=""/></Grid>
                                     <Grid item xs={12}><Typography className={styles.textTeam}>Venados F.C.</Typography></Grid>
                                 </Grid>
                                 :
                                 <Grid container >
-                                    <Grid item xs={12}><img src={gameData.data.opponent_image} className={styles.logoTeam}/></Grid>
+                                    <Grid item xs={12}><img src={gameData.data.opponent_image} className={styles.logoTeam} alt=""/></Grid>
                                     <Grid item xs={12}><Typography className={styles.textTeam}>{gameData.data.opponent}</Typography></Grid>
                                 </Grid>
                         }
@@ -104,14 +104,14 @@ function GameTab(props) {
                             gameData.data.local ?
                                 // <Grid container >
                                 <div>
-                                    <Grid item xs={12}><img src={gameData.data.opponent_image} className={styles.logoTeam}/></Grid>
+                                    <Grid item xs={12}><img src={gameData.data.opponent_image} className={styles.logoTeam} alt=""/></Grid>
                                     <Grid item xs={12}><Typography className={styles.textTeam}>{gameData.data.opponent}</Typography></Grid>
                                 </div>
                                 // </Grid> 
                                 :
                                 // <Grid container >
                                 <div>
-                                    <Grid item xs={12}><img src={logo} className={styles.logoTeam}/></Grid>
+                                    <Grid item xs={12}><img src={logo} className={styles.logoTeam} alt=""/></Grid>
                                     <Grid item xs={12}><Typography className={styles.textTeam}>Venados F.C.</Typography></Grid>
                                     </div> // // </Grid> 
                         }

@@ -95,7 +95,7 @@ const PlayerModal = (props) => {
                 <Grid item xs={12}>
                     <Paper className={styles.containerImage}> 
                         <Typography className={styles.textTitle}>FICHA TÉCNICA</Typography>
-                        <img src={player.image} className={styles.imagePlayer}/>
+                        <img src={player.image} className={styles.imagePlayer} alt={player.name}/>
                         <Typography className={styles.playerText}>{player.name + " " + player.first_surname + " " + player.second_surname}</Typography>
                         <Typography className={styles.playerText}>{player.position !== undefined ? player.position : player.role}</Typography>
                     </Paper>

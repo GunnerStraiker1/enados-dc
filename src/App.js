@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
 import {Switch, Route} from "react-router-dom"
-import routes from './routes'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Home from './views/Home/Home'
 import AppBar from './components/Sidebar/Sidebar'

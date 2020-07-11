@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { withStyles, makeStyles, Typography, Grid, Paper, ListItem, ListItemText, List, ListItemAvatar, Avatar, Container, Modal, Backdrop, Fade } from '@material-ui/core'
+import { withStyles, makeStyles, Typography, Grid, Paper, Container, Modal, Backdrop, Fade } from '@material-ui/core'
 import axios from 'axios'
 import soccer from '../../assets/imgs/grass2.jpg'
 import PlayerModal from '../../components/PlayerModal/PlayerModal'
@@ -128,7 +128,7 @@ const Players = () => {
                         return(
                             <Grid item md={3} xs={4} className={styles.playerContainer}>
                                 <Container fixed className={styles.imageContainer} maxWidth={"xs"} component={"button"} onClick={() => handleOpen(player)}>
-                                    <img src={player.image} className={styles.imagePlayer}/>
+                                    <img src={player.image} className={styles.imagePlayer} alt=""/>
                                 </Container>
                                 
                                 <Typography className={styles.textPlayer}>{player.position}</Typography>
@@ -146,7 +146,7 @@ const Players = () => {
                         return(
                             <Grid item md={3} xs={4} className={styles.playerContainer}>
                                 <Container fixed className={styles.imageContainer} maxWidth={"xs"} component={"button"} onClick={() => handleOpen(player)}>
-                                    <img src={player.image} className={styles.imagePlayer}/>
+                                    <img src={player.image} className={styles.imagePlayer} alt=""/>
                                 </Container>
                                 
                                 <Typography className={styles.textPlayer}>{player.position}</Typography>
@@ -163,7 +163,7 @@ const Players = () => {
                         return(
                             <Grid item md={3} xs={4} className={styles.playerContainer}>
                                 <Container fixed className={styles.imageContainer} maxWidth={"xs"} component={"button"} onClick={() => handleOpen(player)}>
-                                    <img src={player.image} className={styles.imagePlayer}/>
+                                    <img src={player.image} className={styles.imagePlayer} alt=""/>
                                 </Container>
                                 
                                 <Typography className={styles.textPlayer}>{player.position}</Typography>
@@ -180,7 +180,7 @@ const Players = () => {
                         return(
                             <Grid item md={3} xs={4} className={styles.playerContainer}>
                                 <Container fixed className={styles.imageContainer} maxWidth={"xs"} component={"button"} onClick={() => handleOpen(player)}>
-                                    <img src={player.image} className={styles.imagePlayer}/>
+                                    <img src={player.image} className={styles.imagePlayer} alt=""/>
                                 </Container>
                                 
                                 <Typography className={styles.textPlayer}>{player.position}</Typography>
@@ -197,7 +197,7 @@ const Players = () => {
                         return(
                             <Grid item md={3} xs={4} className={styles.playerContainer}>
                                 <Container fixed className={styles.imageContainer} maxWidth={"xs"} component={"button"} onClick={() => handleOpen(player)}>
-                                    <img src={player.image} className={styles.imagePlayer}/>
+                                    <img src={player.image} className={styles.imagePlayer} alt=""/>
                                 </Container>
                                 
                                 <Typography className={styles.textPlayer}>{player.position}</Typography>

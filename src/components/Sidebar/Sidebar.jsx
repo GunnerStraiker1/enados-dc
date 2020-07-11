@@ -1,24 +1,17 @@
-import React, { useState, Fragment, Component } from 'react'
-import clsx from 'clsx'
+import React from 'react'
 import {
-  withStyles, Toolbar,
-  Drawer, Typography, List, ListItem, ListItemAvatar,
+  Toolbar,
+  Drawer, Typography, List, ListItem, 
   ListItemText, IconButton, AppBar,
   Hidden, Divider, useTheme, makeStyles
 } from '@material-ui/core'
 import logo from '../../assets/imgs/logo.png'
 
-import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { withRouter } from "react-router-dom";
 import { routes } from '../../routes'
 
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import MenuIcon from '@material-ui/icons/Menu'
-import MailIcon from '@material-ui/icons/Mail';
-import People from '@material-ui/icons/People'
-
-import Home from '../../views/Home/Home'
 
 const drawerWidth = 240
 // const history = createBrowserHistory();
@@ -78,13 +71,13 @@ const ResponsiveDrawer = (props) => {
       {/* <div className={classes.toolbar} /> */}
       <List>
         <ListItem>
-          <img src={logo} className={classes.logo} />
+          <img src={logo} className={classes.logo} alt=""/>
         </ListItem>
       </List>
       <Divider />
       <List>
-        {routes.map((route, index) => (
-          <ListItem button onClick={() => history.push(route.path)}>
+        {routes.map((route, key) => (
+          <ListItem button onClick={() => history.push(route.path)} key={key}>
             <ListItemIcon>{route.icon}</ListItemIcon>
             <ListItemText primary={route.name} />
           </ListItem>

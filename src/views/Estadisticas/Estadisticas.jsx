@@ -101,7 +101,7 @@ const Estadisticas = (props) => {
                                     <TableCell component="th">
                                         <Grid container>
                                             <Grid item xs={2} md={1}><Typography className={styles.textTeam}>{team.position}</Typography> </Grid>
-                                            <Grid item xs={4} md={1}><img src={team.image} className={styles.logoTeam} /></Grid>
+                                            <Grid item xs={4} md={1}><img src={team.image} className={styles.logoTeam} alt=""/></Grid>
                                             <Grid item xs={6} md={10}><Typography className={styles.textTeam}>{team.team}</Typography></Grid>
                                         </Grid>
                                     </TableCell>

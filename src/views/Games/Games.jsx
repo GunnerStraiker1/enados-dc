@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, Paper, Container, Grid, AccordionSummary, Typography, makeStyles, withStyles } from '@material-ui/core'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Accordion, Grid, AccordionSummary, Typography, makeStyles, withStyles } from '@material-ui/core'
 import GameTab from '../../components/GameTab/GameTab'
 
 const useStyles = makeStyles((theme) =>({
